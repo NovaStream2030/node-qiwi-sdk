@@ -5,4 +5,3 @@ export * from "./ICustomer";
 export * from "./IBillResponse";
 export * from "./IPaymentFormParams";
 export * from "./ICheckNotificationSignature";
-export * from "./IPaymentFormParamsWithoutCustomFields";

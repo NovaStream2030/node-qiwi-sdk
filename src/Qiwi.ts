@@ -4,7 +4,6 @@ import { URLSearchParams } from "url";
 import {
     IOptions,
     IPaymentFormParams,
-    IPaymentFormParamsWithoutCustomFields,
     IBill,
     IBillResponse
 } from "./interfaces";
@@ -38,11 +37,13 @@ export class Qiwi {
         }
         delete params.customFields;
 
-        const query = new URLSearchParams({
-            publicKey,
-            ...params as IPaymentFormParamsWithoutCustomFields,
-            amount
-        });
+        const query = new URLSearchParams(
+            JSON.stringify({
+                publicKey,
+                ...params,
+                amount
+            })
+        );
 
         return `https://oplata.qiwi.com/create?${query.toString()}${customFields}`;
     }
