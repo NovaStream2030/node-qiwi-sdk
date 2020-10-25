@@ -1,5 +1,4 @@
 import * as crypto from "crypto";
-import { ICheckNotificationSignature } from "./interfaces";
 
 /**
  * Checks notification data signature
@@ -8,7 +7,11 @@ export function checkNotificationSignature({
     signature,
     notificationBody,
     merchantSecret
-}: ICheckNotificationSignature) {
+}: {
+    signature: string;
+    notificationBody: Record<string, any>;
+    merchantSecret: string;
+}) {
     const processedNotificationData = {
         "billId": notificationBody.bill.billId,
         "amount.value": Number(notificationBody.bill.amount.value).toFixed(2),

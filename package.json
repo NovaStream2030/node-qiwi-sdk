@@ -1,9 +1,12 @@
 {
   "name": "node-qiwi-sdk",
-  "version": "1.0.3",
-  "description": "Modern QIWI SDK for Node.js",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "version": "1.0.4",
+  "description": "Modern Qiwi SDK for Node.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NovaStream2030/node-qiwi-sdk.git"
@@ -16,14 +19,14 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "prepare": "npm run build",
     "docs:build": "typedoc --out docs --target es6 --readme none --mode file src"
   },
   "devDependencies": {
     "@types/node": "^14.14.0",
-    "@types/node-fetch": "^2.5.7",
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "node-fetch": "^2.6.1"
+    "axios": "^0.21.0"
   }
 }
