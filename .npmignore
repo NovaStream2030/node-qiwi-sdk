@@ -1,0 +1,10 @@
+src
+node_modules
+package-lock.json
+yarn.lock
+tsconfig.json
+.idea
+.git
+.gitignore
+.gitattributes
+.DS_STORE
