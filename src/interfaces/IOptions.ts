@@ -1,4 +1,5 @@
 export interface IOptions {
-    secretKey: string
-    publicKey: string
+    secretKey: string;
+    publicKey: string;
+    url?: string;
 }

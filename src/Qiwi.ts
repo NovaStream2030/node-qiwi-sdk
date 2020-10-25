@@ -1,3 +1,6 @@
+import fetch, { HeadersInit } from "node-fetch";
+import { URLSearchParams } from "url";
+
 import {
     IOptions,
     IPaymentFormParams,
@@ -6,16 +9,15 @@ import {
     IBillResponse
 } from "./interfaces";
 import { normalizeAmount } from "./utils";
-import fetch from "node-fetch";
-import { URLSearchParams } from "url";
 import { APIError } from "./errors";
 
 export class Qiwi {
-    public url: string;
-    private headers: { Authorization: string; Accept: string; "Content-Type": string };
+    public url: string = "https://api.qiwi.com/partner/bill/v1/bills/";
+    private headers: HeadersInit;
 
     constructor(private options: IOptions) {
-        this.url = "https://api.qiwi.com/partner/bill/v1/bills/";
+        if (options.url)
+            this.url = options.url;
 
         this.headers = {
             "Content-Type": "application/json;charset=UTF-8",
