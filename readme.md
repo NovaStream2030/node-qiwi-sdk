@@ -22,7 +22,7 @@ npm i node-qiwi-sdk
 import { Qiwi } from 'node-qiwi-sdk';
 
 const qiwi = new Qiwi({
-    secretKey: "eyJ2ZXJzaW9uIjoicmVzdF92My**********************",
+    secretKey: "eyJ2ZXJzaW9uIjoicmVzdF92MyQaBLDnebLMMxL8************",
     publicKey: "Fnzr1yTebUiQaBLDnebLMMxL8nc6FF5zfmGQnypc*******"
 });
 
