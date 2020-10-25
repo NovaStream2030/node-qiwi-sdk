@@ -1,4 +1,4 @@
-export { Qiwi } from "./Qiwi";
+export * from "./Qiwi";
 export * from "./utils";
 export * from "./types";
 export * from "./errors";

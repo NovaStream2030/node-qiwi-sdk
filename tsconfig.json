@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es2017", "es7", "es6", "dom"],
     "declaration": true,
-    "outDir": "./dist"
+    "outDir": "dist",
+    "moduleResolution": "Node",
+    "esModuleInterop": true
   },
   "include": [
     "src/**/*"
