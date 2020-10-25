@@ -1,7 +1,7 @@
 export type amountCurrency =
-    /**
-     * Rubles
-     */
+/**
+ * Rubles
+ */
     "RUB" |
     /**
      * Tenge
@@ -9,9 +9,9 @@ export type amountCurrency =
     "KZT"
 
 export type InvoiceStatus =
-    /**
-     * Invoice issued, pending payment
-     */
+/**
+ * Invoice issued, pending payment
+ */
     "waiting" |
 
     /**
