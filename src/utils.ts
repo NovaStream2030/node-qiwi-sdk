@@ -1,5 +1,5 @@
 import * as crypto from "crypto";
-import { ICheckNotificationSignature } from "../interfaces";
+import { ICheckNotificationSignature } from "./interfaces";
 
 /**
  * Checks notification data signature
@@ -28,4 +28,8 @@ export function checkNotificationSignature({
         .digest("hex");
 
     return hash === signature;
+}
+
+export function normalizeAmount(amount): string {
+    return amount.toFixed(2);
 }

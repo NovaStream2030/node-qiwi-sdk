@@ -1,3 +1,13 @@
+export type amountCurrency =
+    /**
+     * Rubles
+     */
+    "RUB" |
+    /**
+     * Tenge
+     */
+    "KZT"
+
 export type InvoiceStatus =
     /**
      * Invoice issued, pending payment
