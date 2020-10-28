@@ -38,7 +38,7 @@ export default class Qiwi {
 
         if (params.customFields) {
             customFields = Object.entries(params.customFields)
-                .map(([key, value]) => "customFields[" + key + "]" + "=" + value)
+                .map(([key, value]) => `customFields[${key}]=${value}`)
                 .join("&");
         }
 
