@@ -33,24 +33,28 @@ export default class Qiwi {
 
     createPaymentForm(params: PaymentFormParams): string {
         const { publicKey } = this.options;
-        const amount = normalizeAmount(params.amount);
 
         let customFields = "";
 
-        if (params.customFields) { // Что это за чертовщина?
+        if (params.customFields) {
             for (const [key, value] of Object.entries(params.customFields)) {
                 customFields = customFields + "&" + "customFields[" + key + "]" + "=" + value;
             }
         }
-
         delete params.customFields;
 
-        // @ts-ignore
-        return `https://oplata.qiwi.com/create?${querystring.stringify({
+        // Костыль!
+        const qiwiParams: Record<any, any> = {
             publicKey,
-            ...params,
-            amount
-        })}${customFields}`;
+            ...params
+        }
+        
+        if (params.amount) {
+            qiwiParams.amount = normalizeAmount(params.amount);
+        }
+
+        // @ts-ignore
+        return `https://oplata.qiwi.com/create?${querystring.stringify(qiwiParams)}${customFields}`;
     }
 
     createBill(params: Bill): Promise<BillResponse> {
