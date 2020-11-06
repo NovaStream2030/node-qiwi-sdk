@@ -34,5 +34,5 @@ export function checkNotificationSignature({
 }
 
 export function normalizeAmount(amount): string {
-    return amount.toFixed(2);
+    return Number(amount).toFixed(2);
 }
