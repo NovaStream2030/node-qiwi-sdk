@@ -13,7 +13,6 @@ import { normalizeAmount } from "../utils";
 
 export default class Qiwi {
     private client: AxiosInstance;
-    private headers: HeadersInit;
 
     private readonly options: Options;
 
@@ -24,7 +23,7 @@ export default class Qiwi {
             baseURL: options.url || "https://api.qiwi.com/partner/bill/v1/bills/"
         });
 
-        this.headers = {
+        this.client.defaults.headers = {
             "Content-Type": "application/json;charset=UTF-8",
             "Accept": "application/json",
             "Authorization": `Bearer ${this.options.secretKey}`
@@ -37,9 +36,9 @@ export default class Qiwi {
         let customFields = "";
 
         if (params.customFields) {
-            for (const [key, value] of Object.entries(params.customFields)) {
-                customFields = customFields + "&" + "customFields[" + key + "]" + "=" + value;
-            }
+            customFields = Object.entries(params.customFields)
+                .map(([key, value]) => `customFields[${key}]=${value}`)
+                .join("&");
         }
         delete params.customFields;
 
@@ -70,61 +69,65 @@ export default class Qiwi {
                 customFields: {}
             };
 
-            if (params.comment)
+            if (params.comment) {
                 data.comment = encodeURIComponent(params.comment);
-            if (params.customer) {
-                for (const [key, value] of Object.entries(params.customer)) {
-                    data.customer[key] = encodeURIComponent(value);
-                }
-            } if (params.customFields) {
-                for (const [key, value] of Object.entries(params.customFields)) {
-                    data.customFields[key] = encodeURIComponent(value);
-                }
             }
 
-            this.client.put(params.billId, data, {
-                headers: this.headers
-            }).then(response => {
-                if (response.data.errorCode) return reject({
-                    message: response.data.description,
-                    error: response.data
-                });
+            if (params.customer) {
+                Object.entries(params.customer).forEach(([key, value]) =>
+                    data.customer[key] = encodeURIComponent(value)
+                );
+            }
 
-                if (response.data.payUrl && params.successUrl) {
-                    response.data.payUrl = `${response.data.payUrl}&successUrl=${encodeURIComponent(params.successUrl)}`;
+            if (params.customFields) {
+                Object.entries(params.customFields).forEach(([key, value]) =>
+                    data.customFields[key] = encodeURIComponent(value)
+                );
+            }
+
+            this.client.put(params.billId, data).then(({ data }) => {
+                if (data.errorCode) {
+                    return reject({
+                        message: data.description,
+                        error: data
+                    });
                 }
 
-                resolve(response.data);
+                if (data.payUrl && params.successUrl) {
+                    data.payUrl = `${data.payUrl}&successUrl=${encodeURIComponent(params.successUrl)}`;
+                }
+
+                resolve(data);
             });
         });
     }
 
     getBillInfo(billId: string): Promise<BillResponse> {
         return new Promise<BillResponse>((resolve, reject) => {
-            this.client.get(billId, {
-                headers: this.headers
-            }).then(response => {
-                if (response.data.errorCode) return reject({
-                    message: response.data.description,
-                    error: response.data
-                });
+            this.client.get(billId).then(({ data }) => {
+                if (data.errorCode) {
+                    return reject({
+                        message: data.description,
+                        error: data
+                    });
+                }
 
-                resolve(response.data);
+                resolve(data);
             });
         });
     }
 
     cancelBill(billId: string): Promise<BillResponse> {
         return new Promise<BillResponse>((resolve, reject) => {
-            this.client.post(`${billId}/reject`, null, {
-                headers: this.headers
-            }).then(response => {
-                if (response.data.errorCode) return reject({
-                    message: response.data.description,
-                    error: response.data
-                });
+            this.client.post(`${billId}/reject`).then(({ data }) => {
+                if (data.errorCode) {
+                    return reject({
+                        message: data.description,
+                        error: data
+                    });
+                }
 
-                resolve(response.data);
+                resolve(data);
             });
         });
     }
