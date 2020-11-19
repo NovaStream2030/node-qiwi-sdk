@@ -32,7 +32,6 @@ export default class Qiwi {
 
     createPaymentForm(params: PaymentFormParams): string {
         const { publicKey } = this.options;
-        const amount = normalizeAmount(params.amount);
 
         let customFields = "";
 
@@ -41,15 +40,20 @@ export default class Qiwi {
                 .map(([key, value]) => `customFields[${key}]=${value}`)
                 .join("&");
         }
-
         delete params.customFields;
 
-        // @ts-ignore
-        return `https://oplata.qiwi.com/create?${querystring.stringify({
+        // Костыль!
+        const qiwiParams: Record<any, any> = {
             publicKey,
-            ...params,
-            amount
-        })}${customFields}`;
+            ...params
+        }
+        
+        if (params.amount) {
+            qiwiParams.amount = normalizeAmount(params.amount);
+        }
+
+        // @ts-ignore
+        return `https://oplata.qiwi.com/create?${querystring.stringify(qiwiParams)}${customFields}`;
     }
 
     createBill(params: Bill): Promise<BillResponse> {
