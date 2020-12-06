@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IPaymentFormParams | node-qiwi-sdk</title>
+	<title>BillResponse | node-qiwi-sdk</title>
 	<meta name="description" content="Documentation for node-qiwi-sdk">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../index.html">Globals</a>
 				</li>
 				<li>
-					<a href="ipaymentformparams.html">IPaymentFormParams</a>
+					<a href="billresponse.html">BillResponse</a>
 				</li>
 			</ul>
-			<h1>Interface IPaymentFormParams</h1>
+			<h1>Interface BillResponse</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IPaymentFormParams</span>
+						<span class="target">BillResponse</span>
 					</li>
 				</ul>
 			</section>
@@ -81,15 +81,16 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ipaymentformparams.html#account" class="tsd-kind-icon">account</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ipaymentformparams.html#amount" class="tsd-kind-icon">amount</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ipaymentformparams.html#billid" class="tsd-kind-icon">bill<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ipaymentformparams.html#comment" class="tsd-kind-icon">comment</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ipaymentformparams.html#customfields" class="tsd-kind-icon">custom<wbr>Fields</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ipaymentformparams.html#email" class="tsd-kind-icon">email</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ipaymentformparams.html#lifetime" class="tsd-kind-icon">lifetime</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ipaymentformparams.html#phone" class="tsd-kind-icon">phone</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ipaymentformparams.html#successurl" class="tsd-kind-icon">success<wbr>Url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="billresponse.html#amount" class="tsd-kind-icon">amount</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="billresponse.html#billid" class="tsd-kind-icon">bill<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="billresponse.html#comment" class="tsd-kind-icon">comment</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="billresponse.html#creationdatetime" class="tsd-kind-icon">creation<wbr>Date<wbr>Time</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="billresponse.html#customfields" class="tsd-kind-icon">custom<wbr>Fields</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="billresponse.html#customer" class="tsd-kind-icon">customer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="billresponse.html#expirationdatetime" class="tsd-kind-icon">expiration<wbr>Date<wbr>Time</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="billresponse.html#payurl" class="tsd-kind-icon">pay<wbr>Url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="billresponse.html#siteid" class="tsd-kind-icon">site<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="billresponse.html#status" class="tsd-kind-icon">status</a></li>
 							</ul>
 						</section>
 					</div>
@@ -98,42 +99,27 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="account" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> account</h3>
-					<div class="tsd-signature tsd-kind-icon">account<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/a5f591e/src/interfaces/IPaymentFormParams.ts#L25">interfaces/IPaymentFormParams.ts:25</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>User ID on your system</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="amount" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> amount</h3>
-					<div class="tsd-signature tsd-kind-icon">amount<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<h3>amount</h3>
+					<div class="tsd-signature tsd-kind-icon">amount<span class="tsd-signature-symbol">:</span> <a href="amount.html" class="tsd-signature-type">Amount</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/a5f591e/src/interfaces/IPaymentFormParams.ts#L10">interfaces/IPaymentFormParams.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/fb760c1/src/interfaces/payment.ts#L95">interfaces/payment.ts:95</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Billed amount, rounded down to 2 decimal places</p>
+							<p>Invoice data</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="billid" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> bill<wbr>Id</h3>
+					<h3>bill<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">bill<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/a5f591e/src/interfaces/IPaymentFormParams.ts#L5">interfaces/IPaymentFormParams.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/fb760c1/src/interfaces/payment.ts#L90">interfaces/payment.ts:90</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -148,7 +134,7 @@
 					<div class="tsd-signature tsd-kind-icon">comment<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/a5f591e/src/interfaces/IPaymentFormParams.ts#L30">interfaces/IPaymentFormParams.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/fb760c1/src/interfaces/payment.ts#L110">interfaces/payment.ts:110</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -158,12 +144,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="creationdatetime" class="tsd-anchor"></a>
+					<h3>creation<wbr>Date<wbr>Time</h3>
+					<div class="tsd-signature tsd-kind-icon">creation<wbr>Date<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/fb760c1/src/interfaces/payment.ts#L125">interfaces/payment.ts:125</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The system date of the invoice creation.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="customfields" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> custom<wbr>Fields</h3>
 					<div class="tsd-signature tsd-kind-icon">custom<wbr>Fields<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/a5f591e/src/interfaces/IPaymentFormParams.ts#L35">interfaces/IPaymentFormParams.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/fb760c1/src/interfaces/payment.ts#L115">interfaces/payment.ts:115</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -173,62 +174,72 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="email" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> email</h3>
-					<div class="tsd-signature tsd-kind-icon">email<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="customer" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> customer</h3>
+					<div class="tsd-signature tsd-kind-icon">customer<span class="tsd-signature-symbol">:</span> <a href="customer.html" class="tsd-signature-type">Customer</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/a5f591e/src/interfaces/IPaymentFormParams.ts#L20">interfaces/IPaymentFormParams.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/fb760c1/src/interfaces/payment.ts#L105">interfaces/payment.ts:105</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>User email</p>
+							<p>User IDs</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="lifetime" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> lifetime</h3>
-					<div class="tsd-signature tsd-kind-icon">lifetime<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="expirationdatetime" class="tsd-anchor"></a>
+					<h3>expiration<wbr>Date<wbr>Time</h3>
+					<div class="tsd-signature tsd-kind-icon">expiration<wbr>Date<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/a5f591e/src/interfaces/IPaymentFormParams.ts#L40">interfaces/IPaymentFormParams.ts:40</a></li>
+							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/fb760c1/src/interfaces/payment.ts#L130">interfaces/payment.ts:130</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The date until which the invoice will be available for transfer.</p>
+							<p>The date until which the invoice will be available for payment.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="phone" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> phone</h3>
-					<div class="tsd-signature tsd-kind-icon">phone<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="payurl" class="tsd-anchor"></a>
+					<h3>pay<wbr>Url</h3>
+					<div class="tsd-signature tsd-kind-icon">pay<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/a5f591e/src/interfaces/IPaymentFormParams.ts#L15">interfaces/IPaymentFormParams.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/fb760c1/src/interfaces/payment.ts#L120">interfaces/payment.ts:120</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>User&#39;s phone number (in international format)</p>
+							<p>Link to the created form</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="successurl" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> success<wbr>Url</h3>
-					<div class="tsd-signature tsd-kind-icon">success<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="siteid" class="tsd-anchor"></a>
+					<h3>site<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">site<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/a5f591e/src/interfaces/IPaymentFormParams.ts#L45">interfaces/IPaymentFormParams.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/fb760c1/src/interfaces/payment.ts#L85">interfaces/payment.ts:85</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="status" class="tsd-anchor"></a>
+					<h3>status</h3>
+					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <a href="status.html" class="tsd-signature-type">Status</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/fb760c1/src/interfaces/payment.ts#L100">interfaces/payment.ts:100</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>URL for redirecting in case of successful transfer from the balance of QIWI Wallet. If you use another payment method, forwarding is not performed. The link should lead to your site.</p>
+							<p>Account status data</p>
 						</div>
 					</div>
 				</section>
@@ -245,70 +256,64 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
-						<a href="../classes/apierror.html" class="tsd-kind-icon">APIError</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="../classes/qiwi.html" class="tsd-kind-icon">Qiwi</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="iapierroroptions.html" class="tsd-kind-icon">IAPIError<wbr>Options</a>
+						<a href="amount.html" class="tsd-kind-icon">Amount</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="iamount.html" class="tsd-kind-icon">IAmount</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="ibill.html" class="tsd-kind-icon">IBill</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="ibillresponse.html" class="tsd-kind-icon">IBill<wbr>Response</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="ichecknotificationsignature.html" class="tsd-kind-icon">ICheck<wbr>Notification<wbr>Signature</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="icustomer.html" class="tsd-kind-icon">ICustomer</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="ioptions.html" class="tsd-kind-icon">Options</a>
+						<a href="bill.html" class="tsd-kind-icon">Bill</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="ipaymentformparams.html" class="tsd-kind-icon">IPayment<wbr>Form<wbr>Params</a>
+						<a href="billresponse.html" class="tsd-kind-icon">Bill<wbr>Response</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="ipaymentformparams.html#account" class="tsd-kind-icon">account</a>
+								<a href="billresponse.html#amount" class="tsd-kind-icon">amount</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="ipaymentformparams.html#amount" class="tsd-kind-icon">amount</a>
+								<a href="billresponse.html#billid" class="tsd-kind-icon">bill<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="ipaymentformparams.html#billid" class="tsd-kind-icon">bill<wbr>Id</a>
+								<a href="billresponse.html#comment" class="tsd-kind-icon">comment</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="ipaymentformparams.html#comment" class="tsd-kind-icon">comment</a>
+								<a href="billresponse.html#creationdatetime" class="tsd-kind-icon">creation<wbr>Date<wbr>Time</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="ipaymentformparams.html#customfields" class="tsd-kind-icon">custom<wbr>Fields</a>
+								<a href="billresponse.html#customfields" class="tsd-kind-icon">custom<wbr>Fields</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="ipaymentformparams.html#email" class="tsd-kind-icon">email</a>
+								<a href="billresponse.html#customer" class="tsd-kind-icon">customer</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="ipaymentformparams.html#lifetime" class="tsd-kind-icon">lifetime</a>
+								<a href="billresponse.html#expirationdatetime" class="tsd-kind-icon">expiration<wbr>Date<wbr>Time</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="ipaymentformparams.html#phone" class="tsd-kind-icon">phone</a>
+								<a href="billresponse.html#payurl" class="tsd-kind-icon">pay<wbr>Url</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="ipaymentformparams.html#successurl" class="tsd-kind-icon">success<wbr>Url</a>
+								<a href="billresponse.html#siteid" class="tsd-kind-icon">site<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="billresponse.html#status" class="tsd-kind-icon">status</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface">
-						<a href="istatus.html" class="tsd-kind-icon">IStatus</a>
+						<a href="customer.html" class="tsd-kind-icon">Customer</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="options.html" class="tsd-kind-icon">Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="paymentformparams.html" class="tsd-kind-icon">Payment<wbr>Form<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="status.html" class="tsd-kind-icon">Status</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../index.html#invoicestatus" class="tsd-kind-icon">Invoice<wbr>Status</a>
@@ -333,20 +338,13 @@
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-			</ul>
-			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
 			</ul>
 		</div>
 	</div>

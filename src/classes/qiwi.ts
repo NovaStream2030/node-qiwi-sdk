@@ -97,6 +97,8 @@ export default class Qiwi {
                     data.payUrl = `${data.payUrl}&successUrl=${encodeURIComponent(params.successUrl)}`;
                 }
 
+                data.status.value = data.status.value.toLowerCase();
+
                 resolve(data);
             });
         });

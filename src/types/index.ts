@@ -9,9 +9,9 @@ export type amountCurrency =
     "KZT"
 
 export type InvoiceStatus =
-/**
- * Invoice issued, pending payment
- */
+    /**
+     * Invoice issued, pending payment
+     */
     "waiting" |
 
     /**

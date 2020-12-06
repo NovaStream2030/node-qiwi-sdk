@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IAPIErrorOptions | node-qiwi-sdk</title>
+	<title>Customer | node-qiwi-sdk</title>
 	<meta name="description" content="Documentation for node-qiwi-sdk">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../index.html">Globals</a>
 				</li>
 				<li>
-					<a href="iapierroroptions.html">IAPIErrorOptions</a>
+					<a href="customer.html">Customer</a>
 				</li>
 			</ul>
-			<h1>Interface IAPIErrorOptions</h1>
+			<h1>Interface Customer</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IAPIErrorOptions</span>
+						<span class="target">Customer</span>
 					</li>
 				</ul>
 			</section>
@@ -81,8 +81,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapierroroptions.html#error" class="tsd-kind-icon">error</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapierroroptions.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="customer.html#account" class="tsd-kind-icon">account</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="customer.html#email" class="tsd-kind-icon">email</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="customer.html#phone" class="tsd-kind-icon">phone</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,24 +92,49 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="error" class="tsd-anchor"></a>
-					<h3>error</h3>
-					<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">any</span></div>
+					<a name="account" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> account</h3>
+					<div class="tsd-signature tsd-kind-icon">account<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/a5f591e/src/errors.ts#L2">errors.ts:2</a></li>
+							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/fb760c1/src/interfaces/payment.ts#L29">interfaces/payment.ts:29</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>User ID on your system</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="message" class="tsd-anchor"></a>
-					<h3>message</h3>
-					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="email" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> email</h3>
+					<div class="tsd-signature tsd-kind-icon">email<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/a5f591e/src/errors.ts#L3">errors.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/fb760c1/src/interfaces/payment.ts#L24">interfaces/payment.ts:24</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>User email</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="phone" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> phone</h3>
+					<div class="tsd-signature tsd-kind-icon">phone<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/NovaStream2030/node-qiwi-sdk/blob/fb760c1/src/interfaces/payment.ts#L19">interfaces/payment.ts:19</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>User&#39;s phone number (in international format)</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -123,49 +149,43 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
-						<a href="../classes/apierror.html" class="tsd-kind-icon">APIError</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="../classes/qiwi.html" class="tsd-kind-icon">Qiwi</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="amount.html" class="tsd-kind-icon">Amount</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="bill.html" class="tsd-kind-icon">Bill</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="billresponse.html" class="tsd-kind-icon">Bill<wbr>Response</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="iapierroroptions.html" class="tsd-kind-icon">IAPIError<wbr>Options</a>
+						<a href="customer.html" class="tsd-kind-icon">Customer</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapierroroptions.html#error" class="tsd-kind-icon">error</a>
+								<a href="customer.html#account" class="tsd-kind-icon">account</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapierroroptions.html#message" class="tsd-kind-icon">message</a>
+								<a href="customer.html#email" class="tsd-kind-icon">email</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="customer.html#phone" class="tsd-kind-icon">phone</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface">
-						<a href="iamount.html" class="tsd-kind-icon">IAmount</a>
+						<a href="options.html" class="tsd-kind-icon">Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="ibill.html" class="tsd-kind-icon">IBill</a>
+						<a href="paymentformparams.html" class="tsd-kind-icon">Payment<wbr>Form<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="ibillresponse.html" class="tsd-kind-icon">IBill<wbr>Response</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="ichecknotificationsignature.html" class="tsd-kind-icon">ICheck<wbr>Notification<wbr>Signature</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="icustomer.html" class="tsd-kind-icon">ICustomer</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="ioptions.html" class="tsd-kind-icon">Options</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="ipaymentformparams.html" class="tsd-kind-icon">IPayment<wbr>Form<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="istatus.html" class="tsd-kind-icon">IStatus</a>
+						<a href="status.html" class="tsd-kind-icon">Status</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../index.html#invoicestatus" class="tsd-kind-icon">Invoice<wbr>Status</a>
@@ -190,20 +210,13 @@
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-			</ul>
-			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
 			</ul>
 		</div>
 	</div>
