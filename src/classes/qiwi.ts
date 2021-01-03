@@ -57,40 +57,40 @@ export default class Qiwi {
     }
 
     createBill(params: Bill): Promise<BillResponse> {
-        return new Promise<BillResponse>((resolve, reject) => {
-            const data = {
-                amount: {
-                    currency: encodeURIComponent(params.amount.currency as string),
-                    value: encodeURIComponent(normalizeAmount(params.amount.value))
-                },
-                expirationDateTime: params.expirationDateTime,
-                comment: "",
-                customer: {},
-                customFields: {}
-            };
+        const data = {
+            amount: {
+                currency: encodeURIComponent(params.amount.currency as string),
+                value: encodeURIComponent(normalizeAmount(params.amount.value))
+            },
+            expirationDateTime: params.expirationDateTime,
+            comment: "",
+            customer: {},
+            customFields: {}
+        };
 
-            if (params.comment) {
-                data.comment = encodeURIComponent(params.comment);
-            }
+        if (params.comment) {
+            data.comment = encodeURIComponent(params.comment);
+        }
 
-            if (params.customer) {
-                Object.entries(params.customer).forEach(([key, value]) =>
-                    data.customer[key] = encodeURIComponent(value)
-                );
-            }
+        if (params.customer) {
+            Object.entries(params.customer).forEach(([key, value]) =>
+                data.customer[key] = encodeURIComponent(value)
+            );
+        }
 
-            if (params.customFields) {
-                Object.entries(params.customFields).forEach(([key, value]) =>
-                    data.customFields[key] = encodeURIComponent(value)
-                );
-            }
-
-            this.client.put(params.billId, data).then(({ data }) => {
+        if (params.customFields) {
+            Object.entries(params.customFields).forEach(([key, value]) =>
+                data.customFields[key] = encodeURIComponent(value)
+            );
+        }
+        
+        return this.client.put(params.billId, data)
+            .then(({ data }) => {
                 if (data.errorCode) {
-                    return reject({
+                    throw {
                         message: data.description,
                         error: data
-                    });
+                    };
                 }
 
                 if (data.payUrl && params.successUrl) {
@@ -99,38 +99,35 @@ export default class Qiwi {
 
                 data.status.value = data.status.value.toLowerCase();
 
-                resolve(data);
+                return data;
             });
-        });
     }
 
     getBillInfo(billId: string): Promise<BillResponse> {
-        return new Promise<BillResponse>((resolve, reject) => {
-            this.client.get(billId).then(({ data }) => {
+        return this.client.get(billId)
+            .then(({ data }) => {
                 if (data.errorCode) {
-                    return reject({
+                    throw {
                         message: data.description,
                         error: data
-                    });
+                    };
                 }
 
-                resolve(data);
+                return data;
             });
-        });
     }
 
     cancelBill(billId: string): Promise<BillResponse> {
-        return new Promise<BillResponse>((resolve, reject) => {
-            this.client.post(`${billId}/reject`).then(({ data }) => {
+        return this.client.post(`${billId}/reject`)
+            .then(({ data }) => {
                 if (data.errorCode) {
-                    return reject({
+                    throw {
                         message: data.description,
                         error: data
-                    });
+                    };
                 }
 
-                resolve(data);
+                return data;
             });
-        });
     }
 }
