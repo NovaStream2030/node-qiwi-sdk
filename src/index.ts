@@ -1,17 +1,3 @@
-import Qiwi from "./classes/qiwi";
-
-import {
-    normalizeAmount,
-    checkNotificationSignature
-} from "./utils";
-
+export * from "./classes/qiwi";
 export * from "./types";
-
-export {
-    Qiwi,
-
-    // TODO: Экспортировать некоторые интерфейсы
-
-    normalizeAmount,
-    checkNotificationSignature
-};
+export { normalizeAmount, checkNotificationSignature } from "./utils";
